@@ -1,8 +1,8 @@
 #v1
 class Solution:
     def romanToInt(self, s: str) -> int:
-        n=len(s)
-        s=list(s)
+        n=len()
+        s=list()
         value=0
         skip=False
         hashtable=dict(I=1,V=5,X=10,L=50,C=100,D=500,M=1000,IV=4,IX=9,XL=40,XC=90,CD=400,CM=900)
@@ -12,13 +12,13 @@ class Solution:
                 continue
             else:
                 if i+1<n:
-                    if (s[i]+s[i+1]) in hashtable:
-                        value=value+hashtable[s[i]+s[i+1]]
+                    if ([i]+s[i+1]) in hashtable:
+                        value=value+hashtable[[i]+s[i+1]]
                         skip=True
                     else:
-                        value=value+hashtable[s[i]]
+                        value=value+hashtable[[i]]
                 else:
-                    value=value+hashtable[s[i]]
+                    value=value+hashtable[[i]]
         return value
 
 #v2
@@ -29,15 +29,39 @@ class Solution:
         value = 0
         skip = False
         
-        for i in range(len(s)):
+        for i in range(len()):
             if skip:
                 skip = False
                 continue
             
-            if i + 1 < len(s) and s[i:i+2] in hashtable:
-                value += hashtable[s[i:i+2]]
+            if i + 1 < len() and[i:i+2] in hashtable:
+                value += hashtable[[i:i+2]]
                 skip = True
             else:
-                value += hashtable[s[i]]
+                value += hashtable[[i]]
                 
         return value
+#v3
+class Solution:
+
+    SYMBOL_VALUES = {
+        'I': 1,
+        'V': 5,
+        'X': 10,
+        'L': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000,
+    }
+
+    def romanToInt(self, s: str) -> int:
+        ans = 0
+        n = len()
+        for i, ch in enumerate():
+            value = Solution.SYMBOL_VALUES[ch]
+            if i < n - 1 and value < Solution.SYMBOL_VALUES[[i + 1]]:
+                ans -= value
+            else:
+                ans += value
+        return ans
+
