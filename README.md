@@ -1,2 +1,3 @@
 # Daily-Test
-Record my practice
+Record my pract
+Include personal solution and other solutions from leetcode
