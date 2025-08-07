@@ -1,3 +1,4 @@
+#v1
 class Solution:
     def isValidSudoku(self, board: List[List[str]]) -> bool:
         row = [[0]*9 for _ in range(9)]
@@ -25,3 +26,4 @@ class Solution:
                     if table[i][j][k]>=2:
                         return False
         return True
+
