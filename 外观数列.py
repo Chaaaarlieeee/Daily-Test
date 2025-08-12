@@ -1,3 +1,4 @@
+#v1
 class Solution:
     def countAndSay(self, n: int) -> str:
         prev = "1"
@@ -14,4 +15,5 @@ class Solution:
             prev = curr
         
         return prev
+
 
